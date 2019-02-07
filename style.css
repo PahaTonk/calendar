@@ -1,0 +1,75 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+ul {
+	list-style: none;
+    padding: 0;
+    transition: 500ms;
+    overflow: hidden;
+}
+ul li {
+    padding: 10px;
+}
+ul li:not(.title-month) {
+    z-index: -1;
+}
+ul.active li {
+    z-index: 1;
+}
+[data-dayweek="5"],
+[data-dayweek="6"] {
+	background-color: #e7e7e7;
+}
+.reserved-day {
+	background-color: #00c300;
+}
+.reminder-day {
+    background-color: #ffff00;
+}
+.reserved-day.reminder-day {
+	background-color: #6e64ff;
+}
+ul span {
+    margin-right: 15px;
+}
+ul span,
+ul b,
+.event-selection b {
+	pointer-events: none;
+}
+.popup-event,
+.popup {
+	position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #e7e7e7ad;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 500ms;
+    transform: translateY(-100%);
+}
+.popup-event.active,
+.popup.active {
+    transform: translateY(0);
+}
+.event-selection,
+.event-reminder {
+	margin-bottom: 15px;
+}
+.event-selection,
+.title-month,
+.event-reminder,
+.reserved-day {
+	cursor: pointer;
+}
+.last-day {
+	cursor: default;
+}
+.last-day {
+	background-color: #776c6c;
+}
